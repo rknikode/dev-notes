@@ -4,4 +4,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://developer-notes.github.io/sitemap.xml
+Sitemap: https://rknikode.github.io/dev-notes/sitemap.xml
