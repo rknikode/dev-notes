@@ -87,14 +87,21 @@ const App = {
     const headerSearch = document.getElementById('header-search-input');
     const heroSearch = document.getElementById('hero-search-input');
 
-    const search = this.debounce(() => this.applyFilters(), 200);
+    const search = this.debounce(() => {
+      this.applyFilters();
+      this.scrollToNotes();
+    }, 200);
 
     if (headerSearch) {
-      headerSearch.addEventListener('input', search);
+      headerSearch.addEventListener('input', () => {
+        document.getElementById('filter-category').value = '';
+        search();
+      });
     }
     if (heroSearch) {
       heroSearch.addEventListener('input', () => {
         if (headerSearch) headerSearch.value = heroSearch.value;
+        document.getElementById('filter-category').value = '';
         search();
       });
     }
@@ -118,6 +125,11 @@ const App = {
     document.querySelector('.menu-toggle').addEventListener('click', this.toggleSidebar);
     document.getElementById('sidebar-overlay').addEventListener('click', this.closeSidebar);
     Palette.init();
+  },
+
+  scrollToNotes() {
+    const el = document.getElementById('notes-section');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   },
 
   toggleSidebar() {

@@ -135,12 +135,17 @@ const UI = {
         nav.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
         const cat = link.dataset.category;
+        const hs = document.getElementById('header-search-input');
+        const hr = document.getElementById('hero-search-input');
+        if (hs) hs.value = '';
+        if (hr) hr.value = '';
         if (cat === 'all') {
           document.getElementById('filter-category').value = '';
         } else {
           document.getElementById('filter-category').value = cat;
         }
         App.applyFilters();
+        App.scrollToNotes();
         if (window.innerWidth <= 1024) {
           document.getElementById('sidebar').classList.remove('open');
           document.getElementById('sidebar-overlay').classList.remove('active');
