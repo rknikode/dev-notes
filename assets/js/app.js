@@ -92,9 +92,18 @@ const App = {
       this.scrollToNotes();
     }, 200);
 
+    const resetSidebar = () => {
+      const all = document.querySelector('#sidebar-nav [data-category="all"]');
+      if (all) {
+        document.querySelectorAll('#sidebar-nav .sidebar-link').forEach(l => l.classList.remove('active'));
+        all.classList.add('active');
+      }
+    };
+
     if (headerSearch) {
       headerSearch.addEventListener('input', () => {
         document.getElementById('filter-category').value = '';
+        resetSidebar();
         search();
       });
     }
@@ -102,6 +111,7 @@ const App = {
       heroSearch.addEventListener('input', () => {
         if (headerSearch) headerSearch.value = heroSearch.value;
         document.getElementById('filter-category').value = '';
+        resetSidebar();
         search();
       });
     }
