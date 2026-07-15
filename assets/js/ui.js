@@ -231,24 +231,32 @@ const UI = {
   },
 
   attachCardEvents() {
-    document.querySelectorAll('.btn-preview').forEach(btn => {
-      btn.addEventListener('click', () => Preview.open(btn.dataset.path, btn.dataset.type));
+    const grid = document.getElementById('notes-grid');
+    if (!grid) return;
+
+    grid.querySelectorAll('.btn-preview').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        Preview.open(btn.dataset.path, btn.dataset.type);
+      });
     });
 
-    document.querySelectorAll('.btn-bookmark').forEach(btn => {
-      btn.addEventListener('click', () => {
+    grid.querySelectorAll('.btn-bookmark').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const path = btn.dataset.path;
         Bookmarks.toggleBookmark(path);
         const isNow = Bookmarks.isBookmarked(path);
         btn.classList.toggle('bookmarked', isNow);
         btn.querySelector('use').setAttribute('href', `#icon-${isNow ? 'bookmark-filled' : 'bookmark'}`);
         btn.setAttribute('aria-label', isNow ? 'Remove bookmark' : 'Bookmark note');
-        UI.showToast(isNow ? 'Note bookmarked' : 'Bookmark removed', isNow ? 'bookmark' : 'bookmark');
+        UI.showToast(isNow ? 'Note bookmarked' : 'Bookmark removed');
       });
     });
 
-    document.querySelectorAll('.btn-fav').forEach(btn => {
-      btn.addEventListener('click', () => {
+    grid.querySelectorAll('.btn-fav').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         const path = btn.dataset.path;
         Bookmarks.toggleFavorite(path);
         const isNow = Bookmarks.isFavorited(path);
@@ -259,8 +267,9 @@ const UI = {
       });
     });
 
-    document.querySelectorAll('.btn-share').forEach(btn => {
-      btn.addEventListener('click', async () => {
+    grid.querySelectorAll('.btn-share').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
         const path = btn.dataset.path;
         const url = `${window.location.origin}${window.location.pathname}?note=${encodeURIComponent(path)}`;
         try {

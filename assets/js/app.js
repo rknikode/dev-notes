@@ -7,12 +7,33 @@ const App = {
     ThemeManager.init();
     Keyboard.init();
 
+    if (window.location.protocol === 'file:') {
+      document.getElementById('loading-skeleton').style.display = 'none';
+      document.getElementById('app-content').innerHTML = `
+        <div style="text-align:center;padding:4rem 2rem;max-width:500px;margin:0 auto">
+          <div style="width:64px;height:64px;border-radius:16px;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:var(--text-tertiary)">
+            <svg class="icon-xl" viewBox="0 0 24 24"><use href="#icon-info"/></svg>
+          </div>
+          <h2>Serve with a local server</h2>
+          <p style="color:var(--text-secondary);margin-top:0.5rem;line-height:1.6">
+            This app requires a web server. Open a terminal in this folder and run:<br>
+            <code style="display:inline-block;background:var(--bg-secondary);padding:0.25rem 0.75rem;border-radius:6px;margin-top:0.5rem;font-size:0.875rem">npx serve .</code>
+          </p>
+          <p style="color:var(--text-tertiary);margin-top:1rem;font-size:0.875rem">
+            Or deploy to GitHub Pages for the full experience.
+          </p>
+        </div>
+      `;
+      return;
+    }
+
     const loaded = await DataStore.load();
     if (!loaded) {
+      document.getElementById('loading-skeleton').style.display = 'none';
       document.getElementById('app-content').innerHTML = `
         <div style="text-align:center;padding:4rem 2rem">
           <h2>Unable to load notes</h2>
-          <p style="color:var(--text-secondary);margin-top:0.5rem">Please ensure <code>data/notes.json</code> exists.</p>
+          <p style="color:var(--text-secondary);margin-top:0.5rem">Please ensure <code>data/notes.json</code> exists and is valid JSON.</p>
         </div>
       `;
       return;

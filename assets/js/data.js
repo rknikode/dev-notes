@@ -81,7 +81,7 @@ const DataStore = {
 
     const q = query ? query.toLowerCase().trim() : '';
 
-    let results = this.notes;
+    let results = [...this.notes];
 
     if (q) {
       results = results.filter((note, idx) => {
