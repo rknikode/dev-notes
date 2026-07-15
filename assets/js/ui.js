@@ -82,13 +82,13 @@ const UI = {
       </div>
     `).join('');
 
-    grid.querySelectorAll('.category-card').forEach(el => {
-      el.addEventListener('click', () => {
-        const cat = el.dataset.category;
-        document.getElementById('filter-category').value = cat;
-        App.filterAndRender();
-        document.getElementById('notes-section').scrollIntoView({ behavior: 'smooth' });
-      });
+    grid.addEventListener('click', (e) => {
+      const card = e.target.closest('.category-card');
+      if (!card) return;
+      const cat = card.dataset.category;
+      document.getElementById('filter-category').value = cat;
+      App.applyFilters();
+      document.getElementById('notes-section').scrollIntoView({ behavior: 'smooth' });
     });
   },
 
@@ -129,33 +129,35 @@ const UI = {
       </div>
     `;
 
-    nav.querySelectorAll('.sidebar-link').forEach(el => {
-      el.addEventListener('click', () => {
+    nav.addEventListener('click', (e) => {
+      const link = e.target.closest('.sidebar-link');
+      if (link) {
         nav.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
-        el.classList.add('active');
-        const cat = el.dataset.category;
+        link.classList.add('active');
+        const cat = link.dataset.category;
         if (cat === 'all') {
           document.getElementById('filter-category').value = '';
         } else {
           document.getElementById('filter-category').value = cat;
         }
-        App.filterAndRender();
+        App.applyFilters();
         if (window.innerWidth <= 1024) {
           document.getElementById('sidebar').classList.remove('open');
           document.getElementById('sidebar-overlay').classList.remove('active');
         }
-      });
-    });
+        return;
+      }
 
-    const sectionTitle = nav.querySelector('.sidebar-section-title');
-    if (sectionTitle) {
-      sectionTitle.addEventListener('click', () => {
-        sectionTitle.classList.toggle('collapsed');
-        const content = sectionTitle.nextElementSibling;
-        content.classList.toggle('collapsed-content');
-        sectionTitle.setAttribute('aria-expanded', !content.classList.contains('collapsed-content'));
-      });
-    }
+      const title = e.target.closest('.sidebar-section-title');
+      if (title) {
+        title.classList.toggle('collapsed');
+        const content = title.nextElementSibling;
+        if (content) {
+          content.classList.toggle('collapsed-content');
+          title.setAttribute('aria-expanded', !content.classList.contains('collapsed-content'));
+        }
+      }
+    });
   },
 
   /* ---- Note Cards ---- */

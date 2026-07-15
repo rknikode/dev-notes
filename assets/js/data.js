@@ -74,51 +74,57 @@ const DataStore = {
   },
 
   search(query, filters = {}) {
-    if (!query && !Object.values(filters).some(v => v)) {
+    try {
+      if (!query && !Object.values(filters).some(v => v)) {
+        this.filteredNotes = [...this.notes];
+        return this.filteredNotes;
+      }
+
+      const q = query ? query.toLowerCase().trim() : '';
+      let results = [...this.notes];
+
+      if (q) {
+        results = results.filter((note, idx) => {
+          const entry = this.searchIndex[idx];
+          if (!entry) return false;
+          return entry.text.includes(q);
+        });
+      }
+
+      if (filters.category) {
+        results = results.filter(n => n.category === filters.category);
+      }
+      if (filters.level) {
+        results = results.filter(n => (n.level || '').toLowerCase() === filters.level.toLowerCase());
+      }
+      if (filters.type) {
+        results = results.filter(n => n.type === filters.type);
+      }
+
+      if (filters.sort) {
+        switch (filters.sort) {
+          case 'newest':
+            results.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+            break;
+          case 'oldest':
+            results.sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
+            break;
+          case 'az':
+            results.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+            break;
+          case 'za':
+            results.sort((a, b) => (b.title || '').localeCompare(a.title || ''));
+            break;
+        }
+      }
+
+      this.filteredNotes = results;
+      return results;
+    } catch (err) {
+      console.error('DataStore.search error:', err);
       this.filteredNotes = [...this.notes];
       return this.filteredNotes;
     }
-
-    const q = query ? query.toLowerCase().trim() : '';
-
-    let results = [...this.notes];
-
-    if (q) {
-      results = results.filter((note, idx) => {
-        const searchText = this.searchIndex[idx].text;
-        return searchText.includes(q);
-      });
-    }
-
-    if (filters.category) {
-      results = results.filter(n => n.category === filters.category);
-    }
-    if (filters.level) {
-      results = results.filter(n => (n.level || '').toLowerCase() === filters.level.toLowerCase());
-    }
-    if (filters.type) {
-      results = results.filter(n => n.type === filters.type);
-    }
-
-    if (filters.sort) {
-      switch (filters.sort) {
-        case 'newest':
-          results.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
-          break;
-        case 'oldest':
-          results.sort((a, b) => new Date(a.date || 0) - new Date(b.date || 0));
-          break;
-        case 'az':
-          results.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
-          break;
-        case 'za':
-          results.sort((a, b) => (b.title || '').localeCompare(a.title || ''));
-          break;
-      }
-    }
-
-    this.filteredNotes = results;
-    return results;
   },
 
   getStats() {

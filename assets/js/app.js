@@ -55,6 +55,7 @@ const App = {
     }
   },
 
+  /* ---- Render all UI ---- */
   render() {
     UI.updateBreadcrumbs();
     UI.renderStats();
@@ -62,78 +63,71 @@ const App = {
     UI.renderSidebar();
     UI.populateFilters();
     UI.renderRecent();
-
-    DataStore.search('', {});
-    UI.renderNotes(DataStore.filteredNotes);
+    this.applyFilters();
   },
 
-  filterAndRender() {
-    const query = document.getElementById('header-search-input').value;
-    const category = document.getElementById('filter-category').value;
-    const level = document.getElementById('filter-level').value;
-    const type = document.getElementById('filter-type').value;
-    const sort = document.getElementById('filter-sort').value;
+  /* ---- Central filter + render ---- */
+  applyFilters() {
+    try {
+      const query = document.getElementById('header-search-input').value;
+      const category = document.getElementById('filter-category').value;
+      const level = document.getElementById('filter-level').value;
+      const type = document.getElementById('filter-type').value;
+      const sort = document.getElementById('filter-sort').value;
 
-    const results = DataStore.search(query, { category, level, type, sort });
-    UI.renderNotes(results);
-  },
-
-  attachEvents() {
-    const searchInput = document.getElementById('header-search-input');
-    const heroSearchInput = document.getElementById('hero-search-input');
-
-    const debouncedSearch = this.debounce(() => this.filterAndRender(), 200);
-
-    if (searchInput) {
-      searchInput.addEventListener('input', debouncedSearch);
+      const results = DataStore.search(query, { category, level, type, sort });
+      UI.renderNotes(results);
+    } catch (err) {
+      console.error('filterAndRender error:', err);
     }
-    if (heroSearchInput) {
-      heroSearchInput.addEventListener('input', (e) => {
-        if (searchInput) searchInput.value = e.target.value;
-        debouncedSearch();
+  },
+
+  /* ---- Attach event listeners ---- */
+  attachEvents() {
+    const headerSearch = document.getElementById('header-search-input');
+    const heroSearch = document.getElementById('hero-search-input');
+
+    const search = this.debounce(() => this.applyFilters(), 200);
+
+    if (headerSearch) {
+      headerSearch.addEventListener('input', search);
+    }
+    if (heroSearch) {
+      heroSearch.addEventListener('input', () => {
+        if (headerSearch) headerSearch.value = heroSearch.value;
+        search();
       });
     }
 
-    document.getElementById('filter-category').addEventListener('change', () => this.filterAndRender());
-    document.getElementById('filter-level').addEventListener('change', () => this.filterAndRender());
-    document.getElementById('filter-type').addEventListener('change', () => this.filterAndRender());
-    document.getElementById('filter-sort').addEventListener('change', () => this.filterAndRender());
+    document.getElementById('filter-category').addEventListener('change', () => this.applyFilters());
+    document.getElementById('filter-level').addEventListener('change', () => this.applyFilters());
+    document.getElementById('filter-type').addEventListener('change', () => this.applyFilters());
+    document.getElementById('filter-sort').addEventListener('change', () => this.applyFilters());
 
     document.getElementById('clear-filters').addEventListener('click', () => {
       document.getElementById('filter-category').value = '';
       document.getElementById('filter-level').value = '';
       document.getElementById('filter-type').value = '';
       document.getElementById('filter-sort').value = 'newest';
-      if (searchInput) searchInput.value = '';
-      if (heroSearchInput) heroSearchInput.value = '';
-      this.filterAndRender();
+      if (headerSearch) headerSearch.value = '';
+      if (heroSearch) heroSearch.value = '';
+      this.applyFilters();
     });
 
-    document.querySelector('.theme-toggle').addEventListener('click', () => {
-      ThemeManager.toggle();
-    });
-
-    document.querySelector('.menu-toggle').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.toggle('open');
-      document.getElementById('sidebar-overlay').classList.toggle('active');
-    });
-
-    document.getElementById('sidebar-overlay').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.remove('open');
-      document.getElementById('sidebar-overlay').classList.remove('active');
-    });
-
-    if (searchInput) {
-      document.addEventListener('keydown', (e) => {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'l') {
-          e.preventDefault();
-          searchInput.focus();
-          searchInput.select();
-        }
-      });
-    }
-
+    document.querySelector('.theme-toggle').addEventListener('click', () => ThemeManager.toggle());
+    document.querySelector('.menu-toggle').addEventListener('click', this.toggleSidebar);
+    document.getElementById('sidebar-overlay').addEventListener('click', this.closeSidebar);
     Palette.init();
+  },
+
+  toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('active');
+  },
+
+  closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar-overlay').classList.remove('active');
   },
 
   handleRoute() {
@@ -142,9 +136,7 @@ const App = {
     if (notePath) {
       const note = DataStore.getNoteByPath(notePath);
       if (note) {
-        setTimeout(() => {
-          Preview.open(note.path, note.type);
-        }, 500);
+        setTimeout(() => Preview.open(note.path, note.type), 500);
       }
     }
   },
@@ -155,8 +147,7 @@ const App = {
     window.addEventListener('scroll', () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-      bar.style.width = `${Math.min(progress, 100)}%`;
+      bar.style.width = scrollHeight > 0 ? `${Math.min((scrollTop / scrollHeight) * 100, 100)}%` : '0%';
     });
   },
 
@@ -166,15 +157,13 @@ const App = {
     window.addEventListener('scroll', () => {
       btn.classList.toggle('visible', (document.documentElement.scrollTop || document.body.scrollTop) > 400);
     });
-    btn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   },
 
   initLazyLoad() {
     const images = document.querySelectorAll('[data-src]');
     if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
+      const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target;
@@ -186,10 +175,7 @@ const App = {
       });
       images.forEach(img => observer.observe(img));
     } else {
-      images.forEach(img => {
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-      });
+      images.forEach(img => { img.src = img.dataset.src; img.removeAttribute('data-src'); });
     }
   },
 
@@ -202,7 +188,6 @@ const App = {
   }
 };
 
-/* Initialize when DOM is ready */
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => App.init());
 } else {

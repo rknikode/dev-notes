@@ -170,7 +170,7 @@ const Palette = {
             searchInput.value = '';
             searchInput.focus();
           }
-          App.filterAndRender();
+          App.applyFilters();
           return;
         }
 
@@ -211,7 +211,7 @@ const Palette = {
   showBookmarks() {
     const paths = Bookmarks.getBookmarks();
     const notes = paths.map(p => DataStore.getNoteByPath(p)).filter(Boolean);
-    App.filterAndRender();
+    App.applyFilters();
     const grid = document.getElementById('notes-grid');
     if (notes.length) {
       UI.renderNotes(notes);
@@ -222,7 +222,7 @@ const Palette = {
   showFavorites() {
     const paths = Bookmarks.getFavorites();
     const notes = paths.map(p => DataStore.getNoteByPath(p)).filter(Boolean);
-    App.filterAndRender();
+    App.applyFilters();
     const grid = document.getElementById('notes-grid');
     if (notes.length) {
       UI.renderNotes(notes);
