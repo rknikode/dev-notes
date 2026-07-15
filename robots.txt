@@ -1,0 +1,7 @@
+# Developer Notes
+# Allow all crawlers full access
+
+User-agent: *
+Allow: /
+
+Sitemap: https://developer-notes.github.io/sitemap.xml

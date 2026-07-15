@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Developer Notes - Interview Preparation Portal</title>
+<meta name="description" content="A comprehensive collection of hundreds of technical interview notes covering Java, Spring, Docker, Kubernetes, System Design, Microservices, and more.">
+<meta name="keywords" content="interview notes, technical interview, Java, Spring, Docker, Kubernetes, system design, microservices, programming notes">
+<meta name="author" content="Developer Notes">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Developer Notes - Interview Preparation Portal">
+<meta property="og:description" content="Comprehensive technical interview notes across hundreds of topics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://developer-notes.github.io/">
+<meta property="og:image" content="assets/images/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Developer Notes - Interview Preparation Portal">
+<meta name="twitter:description" content="Comprehensive technical interview notes across hundreds of topics.">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Markdown Parser -->
+<script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+<!-- Manifest -->
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!-- Reading Progress -->
+<div id="reading-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+<!-- SVG Icon Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.91-1.294 2.75-1.025 2.75-1.025.544 1.377.201 2.394.099 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="icon-chevron-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="icon-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+  <symbol id="icon-file-text" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
+  <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="icon-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></symbol>
+  <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="icon-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></symbol>
+  <symbol id="icon-bookmark" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="icon-bookmark-filled" viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" fill="currentColor"/></symbol>
+  <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="icon-heart-filled" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="currentColor"/></symbol>
+  <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="icon-external-link" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="icon-home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
+  <symbol id="icon-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+  <symbol id="icon-command" viewBox="0 0 24 24"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></symbol>
+  <symbol id="icon-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="icon-filter" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+</svg>
+
+<!-- Header -->
+<header class="header" role="banner">
+  <button class="menu-toggle" aria-label="Toggle sidebar" type="button">
+    <svg class="icon-lg" viewBox="0 0 24 24"><use href="#icon-menu"/></svg>
+  </button>
+
+  <div class="header-brand">
+    <div class="header-logo" aria-hidden="true">DN</div>
+    <span class="header-title">Developer Notes</span>
+  </div>
+
+  <div class="header-search" role="search">
+    <svg class="icon search-icon" viewBox="0 0 24 24"><use href="#icon-search"/></svg>
+    <input type="search" id="header-search-input" placeholder="Search notes..." aria-label="Search notes" autocomplete="off">
+    <div class="kbd-hint"><kbd>Ctrl</kbd> <kbd>K</kbd></div>
+  </div>
+
+  <div class="header-actions">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="icon sun-icon" viewBox="0 0 24 24"><use href="#icon-sun"/></svg>
+      <svg class="icon moon-icon" viewBox="0 0 24 24"><use href="#icon-moon"/></svg>
+    </button>
+    <a href="https://github.com" class="github-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">
+      <svg class="icon" viewBox="0 0 24 24"><use href="#icon-github"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<!-- Sidebar Overlay -->
+<div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar" role="navigation" aria-label="Category navigation">
+  <nav id="sidebar-nav"></nav>
+</aside>
+
+<!-- Main Content -->
+<div class="main-wrapper">
+  <main class="main-content" id="app-content" style="display:none">
+
+    <!-- Breadcrumbs -->
+    <nav id="breadcrumbs" class="breadcrumbs" aria-label="Breadcrumb"></nav>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero">
+      <h1>Developer Notes</h1>
+      <p>Your comprehensive collection of interview preparation notes across hundreds of technical topics.</p>
+      <div class="hero-search" role="search">
+        <svg class="icon search-icon" viewBox="0 0 24 24"><use href="#icon-search"/></svg>
+        <input type="search" id="hero-search-input" placeholder="Search any topic..." aria-label="Search topics" autocomplete="off">
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section aria-label="Statistics">
+      <div id="stats-grid" class="stats-grid"></div>
+    </section>
+
+    <!-- Categories -->
+    <section aria-label="Categories">
+      <div class="section-header">
+        <h2>Categories</h2>
+      </div>
+      <div id="categories-grid" class="categories-grid"></div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes-section" aria-label="Notes">
+      <div class="section-header">
+        <h2>Notes</h2>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-bar" role="group" aria-label="Filters">
+        <div class="filter-group">
+          <label for="filter-category">Category</label>
+          <select id="filter-category" aria-label="Filter by category">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+        <div class="filter-separator" aria-hidden="true"></div>
+        <div class="filter-group">
+          <label for="filter-level">Level</label>
+          <select id="filter-level" aria-label="Filter by difficulty">
+            <option value="">All Levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="filter-separator" aria-hidden="true"></div>
+        <div class="filter-group">
+          <label for="filter-type">Type</label>
+          <select id="filter-type" aria-label="Filter by file type">
+            <option value="">All Types</option>
+            <option value="pdf">PDF</option>
+            <option value="md">Markdown</option>
+            <option value="png">PNG</option>
+            <option value="jpg">JPG</option>
+            <option value="gif">GIF</option>
+          </select>
+        </div>
+        <div class="filter-separator" aria-hidden="true"></div>
+        <div class="filter-group">
+          <label for="filter-sort">Sort</label>
+          <select id="filter-sort" aria-label="Sort notes">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+        </div>
+        <button id="clear-filters" class="clear-filters" type="button">Clear all</button>
+      </div>
+
+      <!-- Results Info -->
+      <div id="results-info" class="results-info"></div>
+
+      <!-- Notes Grid -->
+      <div id="notes-grid" class="notes-grid"></div>
+    </section>
+
+    <!-- Recent Notes -->
+    <section aria-label="Recent notes">
+      <div class="section-header">
+        <h2>Recent Notes</h2>
+      </div>
+      <div id="recent-notes" class="notes-grid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p>&copy; <span id="footer-year"></span> Developer Notes. Built with vanilla HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="sitemap.xml" target="_blank">Sitemap</a>
+        <a href="robots.txt" target="_blank">Robots</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Loading Skeleton -->
+  <div id="loading-skeleton" style="padding:2rem;margin-top:var(--header-height);margin-left:var(--sidebar-width)">
+    <div style="max-width:800px;margin:0 auto;padding:4rem 0">
+      <div class="skeleton" style="height:48px;width:60%;margin:0 auto 1rem"></div>
+      <div class="skeleton" style="height:20px;width:40%;margin:0 auto 2rem"></div>
+      <div class="skeleton" style="height:56px;width:100%;margin:0 auto 2rem;border-radius:12px"></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem">
+        <div class="skeleton" style="height:100px;border-radius:16px"></div>
+        <div class="skeleton" style="height:100px;border-radius:16px"></div>
+        <div class="skeleton" style="height:100px;border-radius:16px"></div>
+        <div class="skeleton" style="height:100px;border-radius:16px"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+        <div class="skeleton" style="height:200px;border-radius:16px"></div>
+        <div class="skeleton" style="height:200px;border-radius:16px"></div>
+        <div class="skeleton" style="height:200px;border-radius:16px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Preview Modal -->
+<div id="preview-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Preview">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="preview-title">Preview</h3>
+      <div class="modal-actions">
+        <button id="preview-open" class="btn btn-ghost" type="button" aria-label="Open in new tab">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#icon-external-link"/></svg>
+          Open
+        </button>
+        <button id="preview-download" class="btn btn-ghost" type="button" aria-label="Download">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#icon-download"/></svg>
+          Download
+        </button>
+        <button class="btn btn-ghost modal-close" type="button" aria-label="Close preview">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#icon-x"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="preview-body" class="modal-body"></div>
+  </div>
+</div>
+
+<!-- Image Viewer -->
+<div id="image-viewer" class="image-viewer" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="iv-close" class="iv-close" type="button" aria-label="Close image viewer">
+    <svg class="icon-lg" viewBox="0 0 24 24"><use href="#icon-x"/></svg>
+  </button>
+  <img id="image-viewer-img" src="" alt="">
+  <a id="iv-download-link" class="iv-download" download href="#">
+    <svg class="icon" viewBox="0 0 24 24"><use href="#icon-download"/></svg>
+    Download
+  </a>
+</div>
+
+<!-- Command Palette -->
+<div id="palette-overlay" class="palette-overlay" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="palette">
+    <input id="palette-input" class="palette-input" type="text" placeholder="Search notes or type a command..." autocomplete="off" aria-label="Command palette search">
+    <div id="palette-results" class="palette-results"></div>
+    <div class="palette-footer">
+      <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+      <span><kbd>↵</kbd> Open</span>
+      <span><kbd>Esc</kbd> Close</span>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" class="scroll-top" type="button" aria-label="Scroll to top">
+  <svg class="icon" viewBox="0 0 24 24"><use href="#icon-arrow-up"/></svg>
+</button>
+
+<!-- Scripts -->
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/bookmarks.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/preview.js"></script>
+<script src="assets/js/keyboard.js"></script>
+<script src="assets/js/app.js"></script>
+
+<!-- Footer year -->
+<script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

@@ -1,0 +1,802 @@
+﻿[
+    {
+        "title":  "Java Interview   Most Asked Questions",
+        "description":  "Java Interview   Most Asked Questions - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Java Interview - Most Asked Questions .pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-09",
+        "fileSize":  321209
+    },
+    {
+        "title":  "Typescript Notes",
+        "description":  "Typescript Notes - A pdf document covering TypeScript topics for interview preparation.",
+        "category":  "TypeScript",
+        "tags":  [
+                     "TypeScript",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/typescript/Typescript Notes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-08",
+        "fileSize":  6955619
+    },
+    {
+        "title":  "Html Cheat Sheet",
+        "description":  "Html Cheat Sheet - A pdf document covering HTML topics for interview preparation.",
+        "category":  "HTML",
+        "tags":  [
+                     "HTML",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/html/Html Cheat sheet.pdf",
+        "level":  "Beginner",
+        "date":  "2026-07-08",
+        "fileSize":  3667211
+    },
+    {
+        "title":  "Html Accessibility",
+        "description":  "Html Accessibility - A pdf document covering HTML topics for interview preparation.",
+        "category":  "HTML",
+        "tags":  [
+                     "HTML",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/html/HTML Accessibility.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-08",
+        "fileSize":  1161432
+    },
+    {
+        "title":  "Javascript Notes",
+        "description":  "Javascript Notes - A pdf document covering JavaScript topics for interview preparation.",
+        "category":  "JavaScript",
+        "tags":  [
+                     "JavaScript",
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/javascript/Javascript Notes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-08",
+        "fileSize":  2390002
+    },
+    {
+        "title":  "Azure Interview Q\u0026A",
+        "description":  "Azure Interview Q\u0026A - A pdf document covering Azure topics for interview preparation.",
+        "category":  "Azure",
+        "tags":  [
+                     "Azure",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/azure/Azure Interview Q\u0026A.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  2004039
+    },
+    {
+        "title":  "Hashmap Vs Hashset",
+        "description":  "Hashmap Vs Hashset - A jpg document covering Data Structures topics for interview preparation.",
+        "category":  "Data Structures",
+        "tags":  [
+                     "Data Structures",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/data-structures/HashMap vs HashSet.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  130579
+    },
+    {
+        "title":  "All Design Patterns",
+        "description":  "All Design Patterns - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "Design",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/All Design Patterns.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  1291810
+    },
+    {
+        "title":  "Design Patterns With Examples",
+        "description":  "Design Patterns With Examples - A png document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "Design",
+                     "Visual"
+                 ],
+        "type":  "png",
+        "path":  "docs/database/Design Patterns With Examples.png",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  1823213
+    },
+    {
+        "title":  "Java Opps In Detailed",
+        "description":  "Java Opps In Detailed - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Java OPPS In Detailed.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  3917407
+    },
+    {
+        "title":  "Java Stringbuilder Vs Stringbuffer",
+        "description":  "Java Stringbuilder Vs Stringbuffer - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Java StringBuilder Vs StringBuffer.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  2458950
+    },
+    {
+        "title":  "Java 8 Features",
+        "description":  "Java 8 Features - A jpg document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/java/Java 8 Features.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  108588
+    },
+    {
+        "title":  "Java Functional Interface",
+        "description":  "Java Functional Interface - A jpg document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/java/Java Functional Interface.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  81373
+    },
+    {
+        "title":  "Azure Fundamentals   Az 900",
+        "description":  "Azure Fundamentals   Az 900 - A pdf document covering Azure topics for interview preparation.",
+        "category":  "Azure",
+        "tags":  [
+                     "Azure",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/azure/Azure Fundamentals - AZ-900.pdf",
+        "level":  "Beginner",
+        "date":  "2026-06-29",
+        "fileSize":  5090303
+    },
+    {
+        "title":  "Azure Interview Q\u0026A   2",
+        "description":  "Azure Interview Q\u0026A   2 - A pdf document covering Azure topics for interview preparation.",
+        "category":  "Azure",
+        "tags":  [
+                     "Azure",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/azure/Azure Interview Q\u0026A - 2.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-29",
+        "fileSize":  2739196
+    },
+    {
+        "title":  "Angular Basic Topics",
+        "description":  "Angular Basic Topics - A jpg document covering Angular topics for interview preparation.",
+        "category":  "Angular",
+        "tags":  [
+                     "Angular",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/angular/Angular_Basic_Topics.jpg",
+        "level":  "Beginner",
+        "date":  "2026-06-28",
+        "fileSize":  103814
+    },
+    {
+        "title":  "Introduction To Javascript",
+        "description":  "Introduction To Javascript - A pdf document covering JavaScript topics for interview preparation.",
+        "category":  "JavaScript",
+        "tags":  [
+                     "JavaScript",
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/javascript/Introduction To JavaScript.pdf",
+        "level":  "Beginner",
+        "date":  "2026-06-28",
+        "fileSize":  5058766
+    },
+    {
+        "title":  "Javascript  Details Notes",
+        "description":  "Javascript  Details Notes - A pdf document covering JavaScript topics for interview preparation.",
+        "category":  "JavaScript",
+        "tags":  [
+                     "JavaScript",
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/javascript/JavaScript  Details Notes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  1293172
+    },
+    {
+        "title":  "Angular Q\u0026A",
+        "description":  "Angular Q\u0026A - A pdf document covering Angular topics for interview preparation.",
+        "category":  "Angular",
+        "tags":  [
+                     "Angular",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/angular/Angular Q\u0026A.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  7383794
+    },
+    {
+        "title":  "Angular Advanced Topics",
+        "description":  "Angular Advanced Topics - A jpg document covering Angular topics for interview preparation.",
+        "category":  "Angular",
+        "tags":  [
+                     "Angular",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/angular/Angular Advanced Topics.jpg",
+        "level":  "Advanced",
+        "date":  "2026-06-28",
+        "fileSize":  117259
+    },
+    {
+        "title":  "Angular Concepts   Must Know",
+        "description":  "Angular Concepts   Must Know - A pdf document covering Angular topics for interview preparation.",
+        "category":  "Angular",
+        "tags":  [
+                     "Angular",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/angular/Angular Concepts - Must Know.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  795845
+    },
+    {
+        "title":  "Angular Lifecycle Hook Explained",
+        "description":  "Angular Lifecycle Hook Explained - A pdf document covering Angular topics for interview preparation.",
+        "category":  "Angular",
+        "tags":  [
+                     "Angular",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/angular/Angular Lifecycle Hook Explained.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  2161870
+    },
+    {
+        "title":  "React Cheatsheet",
+        "description":  "React Cheatsheet - A jpg document covering React topics for interview preparation.",
+        "category":  "React",
+        "tags":  [
+                     "React",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/react/React Cheatsheet.jpg",
+        "level":  "Beginner",
+        "date":  "2026-06-28",
+        "fileSize":  215808
+    },
+    {
+        "title":  "React Re Render Triggers",
+        "description":  "React Re Render Triggers - A jpg document covering React topics for interview preparation.",
+        "category":  "React",
+        "tags":  [
+                     "React",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/react/React Re-Render Triggers.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  166654
+    },
+    {
+        "title":  "React Js Notes",
+        "description":  "React Js Notes - A pdf document covering React topics for interview preparation.",
+        "category":  "React",
+        "tags":  [
+                     "React",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/react/React JS Notes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  2244691
+    },
+    {
+        "title":  "Browser Storage Explained",
+        "description":  "Browser Storage Explained - A jpg document covering Misc topics for interview preparation.",
+        "category":  "Misc",
+        "tags":  [
+                     "Misc",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/misc/Browser Storage Explained.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  131508
+    },
+    {
+        "title":  "Rxjs Operators",
+        "description":  "Rxjs Operators - A jpg document covering Misc topics for interview preparation.",
+        "category":  "Misc",
+        "tags":  [
+                     "Misc",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/misc/RxJS Operators.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  182125
+    },
+    {
+        "title":  "Typescript Concepts Explained",
+        "description":  "Typescript Concepts Explained - A jpg document covering TypeScript topics for interview preparation.",
+        "category":  "TypeScript",
+        "tags":  [
+                     "TypeScript",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/typescript/Typescript Concepts Explained.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-28",
+        "fileSize":  139612
+    },
+    {
+        "title":  "Authentication Vs Authorization🔑",
+        "description":  "Authentication Vs Authorization🔑 - A pdf document covering Authentication topics for interview preparation.",
+        "category":  "Authentication",
+        "tags":  [
+                     "Authentication",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/authentication/Authentication vs Authorization🔑.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-23",
+        "fileSize":  10036466
+    },
+    {
+        "title":  "🔐 How Authentication Works",
+        "description":  "🔐 How Authentication Works - A pdf document covering Authentication topics for interview preparation.",
+        "category":  "Authentication",
+        "tags":  [
+                     "Authentication",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/authentication/🔐 How Authentication Works.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-23",
+        "fileSize":  9167067
+    },
+    {
+        "title":  "Javaproblemsolving",
+        "description":  "Javaproblemsolving - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/JavaProblemSolving.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-16",
+        "fileSize":  5105452
+    },
+    {
+        "title":  "Easyproblems",
+        "description":  "Easyproblems - A pdf document covering Algorithms topics for interview preparation.",
+        "category":  "Algorithms",
+        "tags":  [
+                     "Algorithms",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/algorithms/EasyProblems.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-16",
+        "fileSize":  142410
+    },
+    {
+        "title":  "Java Streams Important Questions Extended",
+        "description":  "Java Streams Important Questions Extended - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Java_Streams_Important_Questions_Extended.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-14",
+        "fileSize":  3867
+    },
+    {
+        "title":  "Master Caching Strategies",
+        "description":  "Master Caching Strategies - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/Master Caching Strategies.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8352065
+    },
+    {
+        "title":  "Master Ml Tree Based Model",
+        "description":  "Master Ml Tree Based Model - A pdf document covering Misc topics for interview preparation.",
+        "category":  "Misc",
+        "tags":  [
+                     "Misc",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/misc/Master ML Tree Based Model.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  9112850
+    },
+    {
+        "title":  "Master Cloud Architecture Patterns",
+        "description":  "Master Cloud Architecture Patterns - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "Cloud",
+                     "Architecture",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/Master Cloud Architecture Patterns.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8476702
+    },
+    {
+        "title":  "Master Networking Concepts",
+        "description":  "Master Networking Concepts - A pdf document covering Networking topics for interview preparation.",
+        "category":  "Networking",
+        "tags":  [
+                     "Networking",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/networking/Master Networking Concepts.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  7979633
+    },
+    {
+        "title":  "Master Aws Data Engineering",
+        "description":  "Master Aws Data Engineering - A pdf document covering AWS topics for interview preparation.",
+        "category":  "AWS",
+        "tags":  [
+                     "AWS",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/aws/Master AWS Data Engineering.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8219974
+    },
+    {
+        "title":  "Api Interview Questions \u0026 Answers",
+        "description":  "Api Interview Questions \u0026 Answers - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/API Interview Questions \u0026 Answers.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-11",
+        "fileSize":  10545909
+    },
+    {
+        "title":  "Master Api Design",
+        "description":  "Master Api Design - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "Design",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/Master API Design.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  9014326
+    },
+    {
+        "title":  "Master Microservice Architecture",
+        "description":  "Master Microservice Architecture - A pdf document covering Microservices topics for interview preparation.",
+        "category":  "Microservices",
+        "tags":  [
+                     "Microservices",
+                     "Architecture",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/microservices/Master Microservice Architecture.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8540879
+    },
+    {
+        "title":  "Master Sorting Algorithms",
+        "description":  "Master Sorting Algorithms - A pdf document covering Algorithms topics for interview preparation.",
+        "category":  "Algorithms",
+        "tags":  [
+                     "Algorithms",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/algorithms/Master Sorting Algorithms.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8518292
+    },
+    {
+        "title":  "Master Database",
+        "description":  "Master Database - A pdf document covering Database topics for interview preparation.",
+        "category":  "Database",
+        "tags":  [
+                     "Database",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/database/Master Database.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8159788
+    },
+    {
+        "title":  "Master Docker",
+        "description":  "Master Docker - A pdf document covering Docker topics for interview preparation.",
+        "category":  "Docker",
+        "tags":  [
+                     "Docker",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/docker/Master Docker.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8514997
+    },
+    {
+        "title":  "Master Kubernetes",
+        "description":  "Master Kubernetes - A pdf document covering Kubernetes topics for interview preparation.",
+        "category":  "Kubernetes",
+        "tags":  [
+                     "Kubernetes",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/kubernetes/Master Kubernetes.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  9346738
+    },
+    {
+        "title":  "Master Kafka",
+        "description":  "Master Kafka - A pdf document covering Kafka topics for interview preparation.",
+        "category":  "Kafka",
+        "tags":  [
+                     "Kafka",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/kafka/Master Kafka.pdf",
+        "level":  "Advanced",
+        "date":  "2026-06-11",
+        "fileSize":  8042279
+    },
+    {
+        "title":  "Top 100 Sql Queries",
+        "description":  "Top 100 Sql Queries - A pdf document covering SQL topics for interview preparation.",
+        "category":  "SQL",
+        "tags":  [
+                     "SQL",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/sql/Top 100 SQL Queries.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  407256
+    },
+    {
+        "title":  "Sql Handwritten",
+        "description":  "Sql Handwritten - A pdf document covering SQL topics for interview preparation.",
+        "category":  "SQL",
+        "tags":  [
+                     "SQL",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/sql/SQL Handwritten.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  1167342
+    },
+    {
+        "title":  "🚀 50 Sql Scenario Based Interview Questions \u0026 Answers For Beginners🗄️💻Covering Sql Basics",
+        "description":  "🚀 50 Sql Scenario Based Interview Questions \u0026 Answers For Beginners🗄️💻Covering Sql Basics - A pdf document covering SQL topics for interview preparation.",
+        "category":  "SQL",
+        "tags":  [
+                     "SQL",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/sql/🚀 50 SQL Scenario-Based Interview Questions \u0026 Answers for Beginners🗄️💻Covering SQL basics.pdf",
+        "level":  "Beginner",
+        "date":  "2026-06-10",
+        "fileSize":  6757969
+    },
+    {
+        "title":  "Javaoopsfullnotes",
+        "description":  "Javaoopsfullnotes - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/JAVAOOPSFullNotes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  52465991
+    },
+    {
+        "title":  "Dsa Notes",
+        "description":  "Dsa Notes - A pdf document covering Data Structures topics for interview preparation.",
+        "category":  "Data Structures",
+        "tags":  [
+                     "Data Structures",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/data-structures/DSA_Notes.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  14052891
+    },
+    {
+        "title":  "Sorting Algorithms",
+        "description":  "Sorting Algorithms - A jpg document covering Algorithms topics for interview preparation.",
+        "category":  "Algorithms",
+        "tags":  [
+                     "Algorithms",
+                     "Visual"
+                 ],
+        "type":  "jpg",
+        "path":  "docs/algorithms/Sorting Algorithms.jpg",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  320981
+    },
+    {
+        "title":  "How To Handle Service Failure",
+        "description":  "How To Handle Service Failure - A gif document covering Misc topics for interview preparation.",
+        "category":  "Misc",
+        "tags":  [
+                     "Misc",
+                     "Visual"
+                 ],
+        "type":  "gif",
+        "path":  "docs/misc/How To Handle Service Failure.gif",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  1889500
+    },
+    {
+        "title":  "Javafullnotes",
+        "description":  "Javafullnotes - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/JAVAFullNOTES.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  96315614
+    },
+    {
+        "title":  "Spring Data Jpa Interview Qa",
+        "description":  "Spring Data Jpa Interview Qa - A pdf document covering Spring topics for interview preparation.",
+        "category":  "Spring",
+        "tags":  [
+                     "Spring",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/spring/Spring_Data_JPA_Interview_QA.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  4225
+    },
+    {
+        "title":  "Most Asked Spring Boot Interview Questions",
+        "description":  "Most Asked Spring Boot Interview Questions - A pdf document covering Spring topics for interview preparation.",
+        "category":  "Spring",
+        "tags":  [
+                     "Spring",
+                     "Interview",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/spring/Most Asked Spring Boot Interview Questions.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-06-10",
+        "fileSize":  13822760
+    }
+]
