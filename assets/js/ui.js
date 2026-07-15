@@ -225,10 +225,13 @@ const UI = {
             ${note.parts && note.parts.length ? `
               <div class="note-card-parts">
                 ${note.parts.map(p => `
-                  <a class="btn btn-card btn-part" href="${p.path}" target="_blank" download>
-                    <svg class="icon-sm" viewBox="0 0 24 24"><use href="#icon-file"/></svg>
-                    Part ${p.part} <span class="part-pages">(Pages ${p.pages})</span>
-                  </a>
+                  <div class="note-card-part">
+                    <span class="part-label">Part ${p.part} <span class="part-pages">(Pages ${p.pages})</span></span>
+                    <div class="part-actions">
+                      <button class="btn btn-card btn-preview" data-path="${p.path}" data-type="${note.type}">Preview</button>
+                      <a class="btn btn-card btn-ghost" href="${p.path}" download>Download</a>
+                    </div>
+                  </div>
                 `).join('')}
               </div>
             ` : `
@@ -330,10 +333,13 @@ const UI = {
           ${note.parts && note.parts.length ? `
             <div class="note-card-parts">
               ${note.parts.slice(0, 3).map(p => `
-                <a class="btn btn-card btn-part" href="${p.path}" target="_blank" download>
-                  <svg class="icon-sm" viewBox="0 0 24 24"><use href="#icon-file"/></svg>
-                  Part ${p.part}
-                </a>
+                <div class="note-card-part">
+                  <span class="part-label">Part ${p.part}</span>
+                  <div class="part-actions">
+                    <button class="btn btn-card btn-preview" data-path="${p.path}" data-type="${note.type}">Preview</button>
+                    <a class="btn btn-card btn-ghost" href="${p.path}" download>Download</a>
+                  </div>
+                </div>
               `).join('')}
               ${note.parts.length > 3 ? `<span class="badge badge-type">+${note.parts.length - 3} more</span>` : ''}
             </div>
