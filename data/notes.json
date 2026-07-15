@@ -756,32 +756,45 @@
         "fileSize":  407256
     },
     {
-        "title":  "Javafullnotes",
-        "description":  "Javafullnotes - A pdf document covering Java topics for interview preparation.",
+        "title":  "Java Full Notes",
+        "description":  "Comprehensive Java notes covering core concepts, OOP, collections, multithreading, and more for interview preparation.",
         "category":  "Java",
         "tags":  [
                      "Java",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/java/JAVAFullNOTES.pdf",
+        "path":  "docs/java/JAVAFullNOTES-Part01.pdf",
         "level":  "Intermediate",
         "date":  "2026-06-10",
-        "fileSize":  96315614
+        "fileSize":  96315614,
+        "parts":  [
+                       { "part": 1, "path": "docs/java/JAVAFullNOTES-Part01.pdf", "pages": "1-6", "size": 23.55 },
+                       { "part": 2, "path": "docs/java/JAVAFullNOTES-Part02.pdf", "pages": "7-12", "size": 19.31 },
+                       { "part": 3, "path": "docs/java/JAVAFullNOTES-Part03.pdf", "pages": "13-18", "size": 15.90 },
+                       { "part": 4, "path": "docs/java/JAVAFullNOTES-Part04.pdf", "pages": "19-24", "size": 17.50 },
+                       { "part": 5, "path": "docs/java/JAVAFullNOTES-Part05.pdf", "pages": "25-29", "size": 15.58 }
+                   ]
     },
     {
-        "title":  "Javaoopsfullnotes",
-        "description":  "Javaoopsfullnotes - A pdf document covering Java topics for interview preparation.",
+        "title":  "Java OOPS Full Notes",
+        "description":  "In-depth Java OOP concepts including inheritance, polymorphism, encapsulation, abstraction, and design principles for interview preparation.",
         "category":  "Java",
         "tags":  [
                      "Java",
+                     "OOP",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/java/JAVAOOPSFullNotes.pdf",
+        "path":  "docs/java/JAVAOOPSFullNotes-Part01.pdf",
         "level":  "Intermediate",
         "date":  "2026-06-10",
-        "fileSize":  52465991
+        "fileSize":  52465991,
+        "parts":  [
+                       { "part": 1, "path": "docs/java/JAVAOOPSFullNotes-Part01.pdf", "pages": "1-7", "size": 17.67 },
+                       { "part": 2, "path": "docs/java/JAVAOOPSFullNotes-Part02.pdf", "pages": "8-14", "size": 18.90 },
+                       { "part": 3, "path": "docs/java/JAVAOOPSFullNotes-Part03.pdf", "pages": "15-20", "size": 13.46 }
+                   ]
     },
     {
         "title":  "Sql Scenario Based Interview Questions",

@@ -222,8 +222,19 @@ const UI = {
           ` : ''}
           <div class="note-card-footer">
             ${dateDisplay ? `<span class="note-date">${dateDisplay}</span>` : '<span class="note-date"></span>'}
-            <button class="btn btn-card btn-preview" data-path="${note.path}" data-type="${note.type}">Preview</button>
-            <a class="btn btn-card btn-ghost" href="${note.path}" target="_blank" download>Download</a>
+            ${note.parts && note.parts.length ? `
+              <div class="note-card-parts">
+                ${note.parts.map(p => `
+                  <a class="btn btn-card btn-part" href="${p.path}" target="_blank" download>
+                    <svg class="icon-sm" viewBox="0 0 24 24"><use href="#icon-file"/></svg>
+                    Part ${p.part} <span class="part-pages">(Pages ${p.pages})</span>
+                  </a>
+                `).join('')}
+              </div>
+            ` : `
+              <button class="btn btn-card btn-preview" data-path="${note.path}" data-type="${note.type}">Preview</button>
+              <a class="btn btn-card btn-ghost" href="${note.path}" target="_blank" download>Download</a>
+            `}
             <button class="btn btn-card btn-ghost btn-share" data-title="${note.title}" data-path="${note.path}">
               <svg class="icon-sm" viewBox="0 0 24 24"><use href="#icon-share"/></svg>
             </button>
@@ -316,7 +327,19 @@ const UI = {
         ` : ''}
         <div class="note-card-footer">
           ${dateDisplay ? `<span class="note-date">${dateDisplay}</span>` : '<span class="note-date"></span>'}
-          <button class="btn btn-card btn-preview" data-path="${note.path}" data-type="${note.type}">Preview</button>
+          ${note.parts && note.parts.length ? `
+            <div class="note-card-parts">
+              ${note.parts.slice(0, 3).map(p => `
+                <a class="btn btn-card btn-part" href="${p.path}" target="_blank" download>
+                  <svg class="icon-sm" viewBox="0 0 24 24"><use href="#icon-file"/></svg>
+                  Part ${p.part}
+                </a>
+              `).join('')}
+              ${note.parts.length > 3 ? `<span class="badge badge-type">+${note.parts.length - 3} more</span>` : ''}
+            </div>
+          ` : `
+            <button class="btn btn-card btn-preview" data-path="${note.path}" data-type="${note.type}">Preview</button>
+          `}
         </div>
       `;
       grid.appendChild(card);

@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install qpdf (PDF splitting tool)
+        run: sudo apt-get update && sudo apt-get install -y qpdf
+
       - name: Generate notes.json
         run: node scripts/generate-notes.js
         working-directory: .
