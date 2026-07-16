@@ -556,16 +556,16 @@
     },
     {
         "title":  "Master Cloud Architecture Patterns",
-        "description":  "Master Cloud Architecture Patterns - A pdf document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "Master Cloud Architecture Patterns - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "Cloud",
                      "Architecture",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/database/Master Cloud Architecture Patterns.pdf",
+        "path":  "docs/design-patterns/Master Cloud Architecture Patterns.pdf",
         "level":  "Advanced",
         "date":  "2026-06-11",
         "fileSize":  8476702
@@ -586,14 +586,14 @@
     },
     {
         "title":  "Master Caching Strategies",
-        "description":  "Master Caching Strategies - A pdf document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "Master Caching Strategies - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/database/Master Caching Strategies.pdf",
+        "path":  "docs/design-patterns/Master Caching Strategies.pdf",
         "level":  "Advanced",
         "date":  "2026-06-11",
         "fileSize":  8352065
