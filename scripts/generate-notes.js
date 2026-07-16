@@ -44,6 +44,7 @@ const CATEGORY_NAMES = {
   'networking': 'Networking',
   'algorithms': 'Algorithms',
   'data-structures': 'Data Structures',
+  'design-patterns': 'Design Patterns',
   'interview': 'Interview',
   'misc': 'Misc'
 };

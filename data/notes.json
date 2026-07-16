@@ -101,30 +101,30 @@
     },
     {
         "title":  "Design Patterns With Examples",
-        "description":  "Design Patterns With Examples - A png document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "Design Patterns With Examples - A png document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "Design",
                      "Visual"
                  ],
         "type":  "png",
-        "path":  "docs/database/Design Patterns With Examples.png",
+        "path":  "docs/design-patterns/Design Patterns With Examples.png",
         "level":  "Intermediate",
         "date":  "2026-06-29",
         "fileSize":  1823213
     },
     {
         "title":  "All Design Patterns",
-        "description":  "All Design Patterns - A pdf document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "All Design Patterns - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "Design",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/database/All Design Patterns.pdf",
+        "path":  "docs/design-patterns/All Design Patterns.pdf",
         "level":  "Intermediate",
         "date":  "2026-06-29",
         "fileSize":  1291810
@@ -600,15 +600,15 @@
     },
     {
         "title":  "Api Interview Questions \u0026 Answers",
-        "description":  "Api Interview Questions \u0026 Answers - A pdf document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "Api Interview Questions \u0026 Answers - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "Interview",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/database/API Interview Questions \u0026 Answers.pdf",
+        "path":  "docs/design-patterns/API Interview Questions \u0026 Answers.pdf",
         "level":  "Intermediate",
         "date":  "2026-06-11",
         "fileSize":  10545909
@@ -629,15 +629,15 @@
     },
     {
         "title":  "Master Api Design",
-        "description":  "Master Api Design - A pdf document covering Database topics for interview preparation.",
-        "category":  "Database",
+        "description":  "Master Api Design - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
         "tags":  [
-                     "Database",
+                     "Design Patterns",
                      "Design",
                      "PDF"
                  ],
         "type":  "pdf",
-        "path":  "docs/database/Master API Design.pdf",
+        "path":  "docs/design-patterns/Master API Design.pdf",
         "level":  "Advanced",
         "date":  "2026-06-11",
         "fileSize":  9014326
