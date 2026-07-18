@@ -131,14 +131,14 @@
     },
     {
         "title":  "Java 8 Features",
-        "description":  "Java 8 Features - A jpg document covering Java topics for interview preparation.",
+        "description":  "Java 8 Features - A pdf document covering Java topics for interview preparation.",
         "category":  "Java",
         "tags":  [
                      "Java",
-                     "Visual"
+                     "PDF"
                  ],
-        "type":  "jpg",
-        "path":  "docs/java/Java 8 Features.jpg",
+        "type":  "pdf",
+        "path":  "docs/java/Java 8 Features.pdf",
         "level":  "Intermediate",
         "date":  "2026-06-29",
         "fileSize":  108588
