@@ -928,5 +928,35 @@
         "level":  "Intermediate",
         "date":  "2026-07-17",
         "fileSize":  2948176
+    },
+    {
+        "title":  "Java Pattern Programs",
+        "description":  "Java Pattern Programs - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "Pattern",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Java Pattern Programs.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-18",
+        "fileSize":  2006868
+    },
+    {
+        "title":  "Multithreading In Java",
+        "description":  "Multithreading In Java - A pdf document covering Java topics for interview preparation.",
+        "category":  "Java",
+        "tags":  [
+                     "Java",
+                     "Multithreading",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/java/Multithreading In Java.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-18",
+        "fileSize":  2132057
     }
 ]
