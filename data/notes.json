@@ -882,5 +882,51 @@
         "level":  "Intermediate",
         "date":  "2026-06-10",
         "fileSize":  320981
+    },
+    {
+        "title":  "SOLID Principals",
+        "description":  "SOLID Principals - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
+        "tags":  [
+                     "Design Patterns",
+                     "SOLID",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/design-patterns/SOLID Principals.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-17",
+        "fileSize":  1836965
+    },
+    {
+        "title":  "SOLID Principals 2",
+        "description":  "SOLID Principals 2 - A pdf document covering Design Patterns topics for interview preparation.",
+        "category":  "Design Patterns",
+        "tags":  [
+                     "Design Patterns",
+                     "SOLID",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/design-patterns/SOLID Principals 2.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-17",
+        "fileSize":  2365317
+    },
+    {
+        "title":  "Spring Boot and Spring Framework",
+        "description":  "Spring Boot and Spring Framework - A pdf document covering Spring topics for interview preparation.",
+        "category":  "Spring",
+        "tags":  [
+                     "Spring",
+                     "Spring Boot",
+                     "Framework",
+                     "PDF"
+                 ],
+        "type":  "pdf",
+        "path":  "docs/spring/Spring Boot and Spring Framework.pdf",
+        "level":  "Intermediate",
+        "date":  "2026-07-17",
+        "fileSize":  2948176
     }
 ]
