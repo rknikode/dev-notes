@@ -958,5 +958,20 @@
         "level":  "Intermediate",
         "date":  "2026-07-18",
         "fileSize":  2132057
+    },
+    {
+        "title":  "Junit-Spring Boot Notes",
+        "description":  "Junit-Spring Boot Notes - An HTML document covering Junit topics for interview preparation.",
+        "category":  "Junit",
+        "tags":  [
+                     "Junit",
+                     "Spring Boot",
+                     "HTML"
+                 ],
+        "type":  "html",
+        "path":  "docs/Junit/Junit-Spring boot notes.html",
+        "level":  "Intermediate",
+        "date":  "2026-07-18",
+        "fileSize":  296795
     }
 ]

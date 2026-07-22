@@ -38,6 +38,7 @@ const CATEGORY_NAMES = {
   'typescript': 'TypeScript',
   'react': 'React',
   'angular': 'Angular',
+  'Junit': 'Junit',
   'html': 'HTML',
   'css': 'CSS',
   'authentication': 'Authentication',

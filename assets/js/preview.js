@@ -13,6 +13,8 @@ const Preview = {
       this.openImage(path);
     } else if (typeLower === 'pdf') {
       this.openPDF(path);
+    } else if (typeLower === 'html') {
+      this.openExternal(path);
     } else if (typeLower === 'md' || typeLower === 'txt') {
       this.openMarkdown(path);
     } else {
@@ -47,6 +49,10 @@ const Preview = {
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+  },
+
+  openExternal(path) {
+    window.open(path, '_blank');
   },
 
   openImage(path) {
