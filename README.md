@@ -6,7 +6,7 @@ A production-ready documentation portal for technical interview notes, built wit
 
 - **Search** - Instant client-side search across titles, descriptions, categories, and tags
 - **Filters** - Filter by category, difficulty level, file type, and sort order
-- **Previews** - In-browser preview for PDFs, images (PNG, JPG, GIF), and Markdown files
+- **Previews** - In-browser preview for PDFs, images (PNG, JPG, GIF), and Markdown files; HTML notes open in a new tab
 - **Dark Mode** - Theme toggle with localStorage persistence
 - **Bookmarks & Favorites** - Save and organize your favorite notes
 - **Command Palette** - Press `Ctrl+K` for quick navigation
@@ -50,7 +50,7 @@ developer-notes/
 │   │   └── favicon.svg     # SVG favicon
 │   └── images/             # Open Graph images
 ├── data/
-│   └── notes.json          # Note database (auto-generated)
+│   └── notes.json          # Note database (auto-generated, safe to hand-edit)
 ├── docs/                   # Your note files go here
 │   ├── java/
 │   ├── spring/
@@ -67,16 +67,19 @@ developer-notes/
 │   ├── typescript/
 │   ├── react/
 │   ├── angular/
+│   ├── Junit/
 │   ├── html/
 │   ├── css/
 │   ├── authentication/
 │   ├── networking/
 │   ├── algorithms/
 │   ├── data-structures/
+│   ├── design-patterns/
 │   ├── interview/
 │   └── misc/
 └── scripts/
-    └── generate-notes.js   # Automation script
+    ├── generate-notes.js   # Generator (single source of truth)
+    └── generate-notes.ps1  # Windows wrapper that calls the Node generator
 ```
 
 ## Quick Start
@@ -96,7 +99,9 @@ Place your files in the appropriate `docs/<category>/` folder:
 - `docs/spring/spring-boot.md`
 - `docs/system-design/diagram.png`
 
-Supported file types: PDF, PNG, JPG, JPEG, GIF, WEBP, SVG, MD, TXT
+Supported file types: PDF, PNG, JPG, JPEG, GIF, WEBP, SVG, MD, TXT, HTML, HTM
+
+> HEIC/HEIF images are not indexed because browsers cannot render them. Convert to JPG/PNG or export as PDF first.
 
 ### 3. Generate the database
 
@@ -116,54 +121,37 @@ npx serve .
 
 ## Deploy to GitHub Pages
 
-### Option A: GitHub Actions (Automated)
+Deployment is fully automated by `.github/workflows/deploy.yml`:
 
-Create `.github/workflows/deploy.yml`:
+- Triggers on every push to `main` (and manually via **workflow_dispatch**)
+- Installs Node 20 and `qpdf` (used to split PDFs larger than 24 MiB)
+- Runs `node scripts/generate-notes.js` so `data/notes.json` always matches the files in `docs/`
+- Uploads the repository root as the Pages artifact and deploys it
 
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: node scripts/generate-notes.js
-      - uses: actions/configure-pages@v4
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'developer-notes'
-      - uses: actions/deploy-pages@v4
-```
+Live site: <https://rknikode.github.io/dev-notes/>
 
-### Option B: Manual
+Repository settings required once: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-1. Push the `developer-notes/` folder to a GitHub repository
-2. Go to Settings > Pages
-3. Set source to "main" branch and folder to `/developer-notes`
-4. Save - your site will be live at `https://yourusername.github.io/developer-notes/`
+### Why CI regeneration is safe
+
+`data/notes.json` is committed, and the generator treats any existing entry as
+the source of truth for curated fields (`title`, `description`, `category`,
+`tags`, `level`, `date`). Only file-derived data (`path`, `type`, `fileSize`,
+`parts`) is refreshed, so edits made locally are never lost during deploy.
 
 ## Adding New Notes
 
 1. **Place the file** in the appropriate `docs/<category>/` folder
 2. **Run the generator**: `node scripts/generate-notes.js`
-3. **Commit and push** the changes (including the updated `notes.json`)
+3. **Refine the new entry** in `data/notes.json` if the auto-generated title or
+   description needs work (curated values survive the next run)
+4. **Commit and push** the notes plus the updated `notes.json`
 
 The script automatically extracts:
 - Title (from filename)
 - Category (from folder name)
 - Type (from file extension)
-- Date (from file modification time)
+- Date (from file modification time, preserved once the note exists)
 - Tags and difficulty level (intelligent guessing)
 
 For precise control, edit `data/notes.json` directly after generation.
@@ -187,7 +175,7 @@ Edit the CSS custom properties in `assets/css/styles.css`:
 
 To add a new category:
 1. Create a new folder in `docs/` (e.g., `docs/golang/`)
-2. Add the mapping in `scripts/generate-notes.js`:
+2. Add the mapping in `scripts/generate-notes.js` (keys are lowercase folder names):
    ```js
    const CATEGORY_NAMES = { ..., 'golang': 'Go' };
    ```

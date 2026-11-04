@@ -18,6 +18,11 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const DOCS_DIR = path.join(ROOT_DIR, 'docs');
 const OUTPUT_FILE = path.join(ROOT_DIR, 'data', 'notes.json');
 
+// Metadata fields that are hand-curated in notes.json. When a file already has
+// an entry, these values win over the auto-generated ones so that manual edits
+// survive re-generation (locally and in the GitHub Actions deploy).
+const CURATED_FIELDS = ['title', 'description', 'category', 'tags', 'level', 'date'];
+
 const CLOUDFLARE_LIMIT_MB = 24;
 const MAX_SIZE_BYTES = CLOUDFLARE_LIMIT_MB * 1024 * 1024;
 
@@ -38,7 +43,7 @@ const CATEGORY_NAMES = {
   'typescript': 'TypeScript',
   'react': 'React',
   'angular': 'Angular',
-  'Junit': 'Junit',
+  'junit': 'Junit',
   'html': 'HTML',
   'css': 'CSS',
   'authentication': 'Authentication',
@@ -55,7 +60,8 @@ const DEFAULT_LEVEL = 'Intermediate';
 
 // File types we support
 const SUPPORTED_EXTENSIONS = [
-  '.pdf', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.md', '.txt'
+  '.pdf', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.md', '.txt',
+  '.html', '.htm'
 ];
 
 /**
@@ -162,6 +168,7 @@ function generateTags(title, category, ext) {
   if (ext === 'pdf') tags.add('PDF');
   if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(ext)) tags.add('Visual');
   if (ext === 'md') tags.add('Markdown');
+  if (ext === 'html' || ext === 'htm') tags.add('HTML');
 
   return Array.from(tags);
 }
@@ -179,11 +186,14 @@ function generateDescription(title, category, ext) {
     gif: 'animated GIF illustration',
     webp: 'WEBP image',
     svg: 'SVG diagram',
+    html: 'HTML document',
+    htm: 'HTML document',
     txt: 'text document'
   };
 
   const typeDesc = extNames[ext] || 'document';
-  return `${title} - A ${typeDesc} covering ${category.toLowerCase()} topics for interview preparation.`;
+  const article = (ext === 'html' || ext === 'htm') ? 'An' : 'A';
+  return `${title} - ${article} ${typeDesc} covering ${category.toLowerCase()} topics for interview preparation.`;
 }
 
 /**
@@ -402,6 +412,12 @@ function processNotes(notes) {
         };
       });
 
+      // The entry represents the whole document, so report the combined size.
+      first.fileSize = parts.reduce(
+        (total, p) => total + fs.statSync(path.join(ROOT_DIR, p.path)).size,
+        0
+      );
+
       first.title = first.title.replace(/\s*Part\d{2}\s*$/i, '').trim();
       if (first.title.endsWith('-') || first.title.endsWith('_')) {
         first.title = first.title.slice(0, -1).trim();
@@ -415,6 +431,83 @@ function processNotes(notes) {
   }
 
   return merged;
+}
+
+/**
+ * Load the previously generated notes.json so curated metadata can be merged.
+ */
+function loadExistingNotes() {
+  if (!fs.existsSync(OUTPUT_FILE)) return [];
+
+  try {
+    const raw = fs.readFileSync(OUTPUT_FILE, 'utf-8').trim();
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    console.warn(`  Warning: could not read existing notes.json (${err.message}).`);
+    console.warn('  Continuing with auto-generated metadata only.');
+    return [];
+  }
+}
+
+/**
+ * Index existing notes by their own path and by every part path, so a
+ * multi-part document can be matched back to its curated entry.
+ */
+function buildExistingIndex(existingNotes) {
+  const index = new Map();
+
+  for (const note of existingNotes) {
+    if (!note || !note.path) continue;
+    index.set(note.path, note);
+    if (Array.isArray(note.parts)) {
+      note.parts.forEach(part => {
+        if (part && part.path) index.set(part.path, note);
+      });
+    }
+  }
+
+  return index;
+}
+
+/**
+ * Copy curated fields from the existing entry onto the freshly scanned note.
+ * File-derived data (path, type, fileSize, parts) always comes from disk.
+ */
+function mergeCuratedMetadata(note, existingIndex) {
+  const prior = existingIndex.get(note.path);
+  if (!prior) return note;
+
+  const generatedDescription = note.description;
+
+  for (const field of CURATED_FIELDS) {
+    const value = prior[field];
+    if (value === undefined || value === null || value === '') continue;
+
+    if (Array.isArray(value)) {
+      if (value.length > 0) note[field] = [...value];
+    } else {
+      note[field] = value;
+    }
+  }
+
+  // Preserve known page ranges for split documents.
+  if (note.parts && Array.isArray(prior.parts)) {
+    const pagesByPath = new Map(prior.parts.map(part => [part.path, part.pages]));
+    note.parts = note.parts.map(part => ({
+      ...part,
+      pages: pagesByPath.get(part.path) || part.pages
+    }));
+
+    // Only fall back to the generated description when the file was split for
+    // the first time, i.e. the curated entry did not describe parts yet.
+    if (prior.parts.length === 0) {
+      note.description = generatedDescription;
+    }
+  }
+
+  return note;
 }
 
 /**
@@ -437,10 +530,28 @@ function main() {
   console.log(`\nFound ${notes.length} file(s).`);
 
   if (notes.length > 0) {
+    const existingNotes = loadExistingNotes();
+
     console.log('\nProcessing oversized PDFs and grouping parts...');
     notes = processNotes(notes);
 
-    notes.sort((a, b) => new Date(b.date) - new Date(a.date));
+    // Hand-curated titles/descriptions/tags/levels/dates in notes.json win over
+    // auto-generated values, so re-running this script never undoes manual edits.
+    const existingIndex = buildExistingIndex(existingNotes);
+    let preserved = 0;
+    notes = notes.map(note => {
+      if (existingIndex.has(note.path)) preserved++;
+      return mergeCuratedMetadata(note, existingIndex);
+    });
+    if (preserved > 0) {
+      console.log(`  Preserved curated metadata for ${preserved} existing note(s).`);
+    }
+
+    notes.sort((a, b) => {
+      const byDate = new Date(b.date || 0) - new Date(a.date || 0);
+      if (byDate !== 0) return byDate;
+      return (a.title || '').localeCompare(b.title || '');
+    });
 
     const outputDir = path.dirname(OUTPUT_FILE);
     if (!fs.existsSync(outputDir)) {
