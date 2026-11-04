@@ -33,6 +33,22 @@
     "fileSize": 2144505
   },
   {
+    "title": "Coding Interview Top Questions - Capgemini",
+    "description": "Top coding interview questions asked in Capgemini hiring rounds, with solutions.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Interview",
+      "Capgemini",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Coding Interview Top Questions (Capgemini).pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 790815
+  },
+  {
     "title": "Docker Interview - 50 Questions",
     "description": "50 frequently asked Docker interview questions with answers covering images, containers, volumes, and networking.",
     "category": "Docker",
@@ -79,6 +95,136 @@
     "level": "Beginner",
     "date": "2026-11-04",
     "fileSize": 3174663
+  },
+  {
+    "title": "Java 11 Features",
+    "description": "Overview of Java 11 features: local variable syntax for lambdas, the HTTP Client, String and Files API additions, and removed APIs.",
+    "category": "Java",
+    "tags": [
+      "Java",
+      "Java 11",
+      "Features",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/java/Java 11 Features.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 1932611
+  },
+  {
+    "title": "Java Coding - TCS NQT Questions",
+    "description": "Java coding questions from the TCS NQT exam with solutions and explanations.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Java",
+      "TCS NQT",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Java Coding TCS NQT Questions.pdf",
+    "level": "Beginner",
+    "date": "2026-11-04",
+    "fileSize": 1407438
+  },
+  {
+    "title": "Java Coding Questions",
+    "description": "Frequently asked Java coding interview questions with worked solutions.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Java",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Java Coding Questions.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 1585749
+  },
+  {
+    "title": "Java CompletableFuture - Production Cheat Sheet",
+    "description": "Production-focused CompletableFuture cheat sheet covering async pipelines, exception handling, timeouts, and custom thread pools.",
+    "category": "Java",
+    "tags": [
+      "Java",
+      "Concurrency",
+      "CompletableFuture",
+      "Cheat Sheet",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/java/Java CompletableFuture Production Cheet Sheet.pdf",
+    "level": "Advanced",
+    "date": "2026-11-04",
+    "fileSize": 2556101
+  },
+  {
+    "title": "Java Pattern Coding Programs",
+    "description": "Pattern printing programs in Java with code and expected output for placement practice.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Java",
+      "Patterns",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Java Pattern Coding Programs.pdf",
+    "level": "Beginner",
+    "date": "2026-11-04",
+    "fileSize": 1061713
+  },
+  {
+    "title": "Java Programs for SDET - Top Questions",
+    "description": "Top Java programs asked in SDET and automation testing interviews.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Java",
+      "SDET",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Java Programs SDET Top.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 1585749
+  },
+  {
+    "title": "Java Stream Interview Questions",
+    "description": "Interview questions on the Java Stream API - intermediate operations, collectors, grouping, and parallel streams.",
+    "category": "Java",
+    "tags": [
+      "Java",
+      "Streams",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/java/Java Stream Interview Questions.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 1642973
+  },
+  {
+    "title": "Java Tricky Interview Questions",
+    "description": "Tricky Java interview questions covering common gotchas in strings, collections, equals/hashCode, and generics.",
+    "category": "Java",
+    "tags": [
+      "Java",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/java/Java Tricky Interview Questions.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 1097695
   },
   {
     "title": "Low Level System Design Patterns Handbook",
@@ -128,6 +274,23 @@
     "level": "Intermediate",
     "date": "2026-11-04",
     "fileSize": 3173922
+  },
+  {
+    "title": "Stream API Coding Questions",
+    "description": "Hands-on Java Stream API coding problems with solutions for interviews.",
+    "category": "Coding",
+    "tags": [
+      "Coding",
+      "Java",
+      "Streams",
+      "Interview",
+      "PDF"
+    ],
+    "type": "pdf",
+    "path": "docs/coding/Stream API Coding Question.pdf",
+    "level": "Intermediate",
+    "date": "2026-11-04",
+    "fileSize": 421667
   },
   {
     "title": "System Design Interview - Top 50 Questions",

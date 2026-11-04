@@ -51,6 +51,7 @@ const CATEGORY_NAMES = {
   'algorithms': 'Algorithms',
   'data-structures': 'Data Structures',
   'design-patterns': 'Design Patterns',
+  'coding': 'Coding',
   'interview': 'Interview',
   'misc': 'Misc'
 };
@@ -151,6 +152,7 @@ function generateTags(title, category, ext) {
     'security': 'Security',
     'network': 'Networking',
     'algorithm': 'Algorithms',
+    'coding': 'Coding',
     'data structure': 'Data Structures',
     'architecture': 'Architecture',
     'cloud': 'Cloud',

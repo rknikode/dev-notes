@@ -56,7 +56,7 @@ const DataStore = {
       'TypeScript': '🔷', 'React': '⚛', 'Angular': '🅰', 'HTML': '🌐',
       'CSS': '🎨', 'Authentication': '🔐', 'Networking': '🌍',
       'Algorithms': '⚡', 'Data Structures': '📊', 'Interview': '💼',
-      'Design Patterns': '🧩', 'Junit': '🧪',
+      'Design Patterns': '🧩', 'Junit': '🧪', 'Coding': '💻',
       'Misc': '📎'
     };
     return icons[category] || '📄';

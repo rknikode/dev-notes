@@ -75,6 +75,7 @@ developer-notes/
 │   ├── algorithms/
 │   ├── data-structures/
 │   ├── design-patterns/
+│   ├── coding/
 │   ├── interview/
 │   └── misc/
 └── scripts/
