@@ -242,9 +242,10 @@ small { font-size: 0.875rem; }
 }
 
 /* === Icons (inline SVG) === */
-.icon {
-  width: 20px;
-  height: 20px;
+.icon,
+.icon-sm,
+.icon-lg,
+.icon-xl {
   display: inline-block;
   flex-shrink: 0;
   fill: none;
@@ -253,6 +254,8 @@ small { font-size: 0.875rem; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+.icon { width: 20px; height: 20px; }
 
 .icon-sm { width: 16px; height: 16px; }
 .icon-lg { width: 24px; height: 24px; }
