@@ -52,6 +52,7 @@ const CATEGORY_NAMES = {
   'data-structures': 'Data Structures',
   'design-patterns': 'Design Patterns',
   'coding': 'Coding',
+  'coding-questions': 'Coding',
   'interview': 'Interview',
   'misc': 'Misc'
 };

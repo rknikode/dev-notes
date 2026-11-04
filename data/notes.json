@@ -43,7 +43,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Coding Interview Top Questions (Capgemini).pdf",
+    "path": "docs/coding-questions/Coding Interview Top Questions (Capgemini).pdf",
     "level": "Intermediate",
     "date": "2026-11-04",
     "fileSize": 790815
@@ -124,7 +124,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Java Coding TCS NQT Questions.pdf",
+    "path": "docs/coding-questions/Java Coding TCS NQT Questions.pdf",
     "level": "Beginner",
     "date": "2026-11-04",
     "fileSize": 1407438
@@ -140,7 +140,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Java Coding Questions.pdf",
+    "path": "docs/coding-questions/Java Coding Questions.pdf",
     "level": "Intermediate",
     "date": "2026-11-04",
     "fileSize": 1585749
@@ -173,7 +173,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Java Pattern Coding Programs.pdf",
+    "path": "docs/coding-questions/Java Pattern Coding Programs.pdf",
     "level": "Beginner",
     "date": "2026-11-04",
     "fileSize": 1061713
@@ -190,7 +190,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Java Programs SDET Top.pdf",
+    "path": "docs/coding-questions/Java Programs SDET Top.pdf",
     "level": "Intermediate",
     "date": "2026-11-04",
     "fileSize": 1585749
@@ -287,7 +287,7 @@
       "PDF"
     ],
     "type": "pdf",
-    "path": "docs/coding/Stream API Coding Question.pdf",
+    "path": "docs/coding-questions/Stream API Coding Question.pdf",
     "level": "Intermediate",
     "date": "2026-11-04",
     "fileSize": 421667
